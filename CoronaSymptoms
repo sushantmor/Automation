@@ -1,0 +1,70 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import logging
+import time
+
+logging.info("logCoronaSymptoms.txt")
+
+driver = webdriver.Chrome("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver_win32\\chromedriver.exe")
+#give path of Chrome webdriver
+
+f = open("logCoronaSymptoms.txt","w")
+f.write("Chrome opened.")
+print("Chrome opened.")
+
+driver.maximize_window()
+f = open("logCoronaSymptoms.txt","a")
+f.write("Chrome-window-maximised.")
+print("Chrome-window-maximised.")
+
+driver.get("https://www.google.com")
+f = open("logCoronaSymptoms.txt","a")
+f.write("Site opened.")
+print("Site opened.")
+
+driver.implicitly_wait(5)
+
+#xpath of search box
+driver.find_element_by_xpath("/html/body/div/div[2]/form/div[2]/div[1]/div[1]/div/div[2]/input").click()
+
+f = open("logCoronaSymptoms.txt","a")
+f.write("Clicked on search box.")
+print("Clicked on search box.")
+
+driver.implicitly_wait(5)
+#xpath of search box
+driver.find_element_by_xpath("/html/body/div/div[2]/form/div[2]/div[1]/div[1]/div/div[2]/input").send_keys("Corona cases in India")
+#country name editable
+
+f = open("logCoronaSymptoms.txt","a")
+f.write("Search keys entered.")
+print("Search keys entered.")
+
+driver.implicitly_wait(5)
+driver.find_element_by_xpath("/html/body/div/div[2]/form/div[2]/div[1]/div[1]/div/div[2]/input").send_keys(Keys.ENTER)
+f = open("logCoronaSymptoms.txt","a")
+f.write("Search successful.")
+print("Search successful.")
+
+driver.implicitly_wait(5)
+#xpath of symptoms column
+driver.find_element_by_xpath("/html/body/div[5]/div[2]/div[9]/div[1]/div[2]/div/div[2]/div[2]/div/div/div/div/div[2]/ul/li[2]/span").click()
+
+f = open("logCoronaSymptoms.txt","a")
+f.write("Clicked on Symptoms.")
+print("Clicked on Symptoms.")
+
+time.sleep(5)
+
+driver.save_screenshot("C:/Users/abc/Desktop/Python/Edureka/Screen Shots/CoronaSymptoms.png")
+#give path where to save screenshot
+#screenshot name editable
+
+f = open("logCoronaSymptoms.txt","a")
+f.write("Screenshot taken.")
+print("Screenshot taken.")
+
+f = open("logCoronaSymptoms.txt","a")
+f.write("Task completed.")
+print("Task completed.")
+f.close()
