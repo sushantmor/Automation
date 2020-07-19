@@ -14,8 +14,8 @@ root.title("Mini Browser")
 root.geometry("750x380")
 
 #set GUI background
+#give image path if not in same folder
 bg = ImageTk.PhotoImage(file="GoogleHP.jpg")
-#C:\\Users\\abc\\Desktop\\tkinter git hub project\\
 background = Label(root,image=bg).place(x=0,y=0,relwidth=1,relheight=1)
 
 #functions to open google
