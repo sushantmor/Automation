@@ -1,0 +1,77 @@
+#import required modules
+import webbrowser
+from tkinter import *
+import tkinter.messagebox as mb
+from PIL import Image,ImageTk
+
+#initialize gui window
+root = Tk()
+
+#set GUI title
+root.title("Mini Browser")
+
+#set GUI dimensions
+root.geometry("750x380")
+
+#set GUI background
+bg = ImageTk.PhotoImage(file="GoogleHP.jpg")
+#C:\\Users\\abc\\Desktop\\tkinter git hub project\\
+background = Label(root,image=bg).place(x=0,y=0,relwidth=1,relheight=1)
+
+#functions to open google
+def google():
+    webbrowser.open("www.google.com")
+
+#functions to open youtube
+def yt():
+    webbrowser.open("www.youtube.com")
+
+#functions to open Google meet
+def gm():
+    webbrowser.open("https://meet.google.com")
+    
+#functions to open Google Classroom
+def gc():
+    webbrowser.open("www.classroom.google.com")
+
+#functions to open facebook
+def fb():
+    webbrowser.open("www.facebook.com")
+
+#functions to open skype
+def sk():
+    webbrowser.open("www.skype.com")
+
+#functions to close GUI window
+def exit():
+    choice=mb.askyesno('Confirmation','You want to exit?')
+    if choice==True:
+        root.destroy()
+
+#Google Button
+b1=Button(root,text="Google",width=8,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=google)
+b1.place(x=200,y=150)
+
+#Youtube Button
+b2=Button(root,text="Youtube",width=8,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=yt)
+b2.place(x=200,y=200)
+
+#Google-meet Button
+b3=Button(root,text="Google-meet",width=14,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=gm)
+b3.place(x=400,y=150)
+
+#Google-Classroom Button
+b4=Button(root,text="Google-Classroom",width=14,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=gc)
+b4.place(x=400,y=200)
+
+#Facebook Button
+b5=Button(root,text="Facebook",width=8,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=fb)
+b5.place(x=200,y=250)
+
+#Skype Button
+b6=Button(root,text="Skype",width=14,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#D3D3D3",fg="blue",command=sk)
+b6.place(x=400,y=250)
+
+#Exit button
+b8=Button(root,text="Exit",width=8,pady=5,padx=5,font="arial 9 bold",relief="groove",bg="#FF4500",fg="white",command=exit)
+b8.place(x=300,y=300)
